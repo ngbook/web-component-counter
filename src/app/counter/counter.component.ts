@@ -7,15 +7,14 @@ moment.locale('zh-cn');
     selector: 'ng-counter',
     templateUrl: './counter.component.html',
     styleUrls: ['./counter.component.scss'],
-    encapsulation: ViewEncapsulation.Native
+    encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CounterComponent implements OnInit {
-    @Input()
+    @Input() // 单个数字的宽度
     set width(w: number) {
         if (w) {
             this._width = w;
-            this.height = Math.round(w / 100 * 144);
-            this.fontSize = Math.round(this.height * 0.8);
+            this.otherInit();
         }
     }
     get width() {
@@ -30,7 +29,11 @@ export class CounterComponent implements OnInit {
     minutes = '0';
     seconds = '0';
 
-    constructor() { }
+    constructor() {
+        if (!this.height) {
+            this.otherInit();
+        }
+    }
 
     private time = moment('2018-01-01 00:00:00');
     private _width = 100;
@@ -41,8 +44,12 @@ export class CounterComponent implements OnInit {
             this.seconds = this.num2str(this.time.seconds());
             this.minutes = this.num2str(this.time.minutes());
             this.hours = this.num2str(this.time.hours());
-            // console.log(this.seconds);
         }, 1000);
+    }
+
+    private otherInit() {
+        this.height = Math.round(this._width / 100 * 144);
+        this.fontSize = Math.round(this.height * 0.8);
     }
 
     private num2str(num: number | string): string {

@@ -4,10 +4,10 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'ng-wheel',
-  templateUrl: './wheel.component.html',
-  styleUrls: ['./wheel.component.scss']
-//   encapsulation: ViewEncapsulation.None
+    selector: 'ng-wheel',
+    templateUrl: './wheel.component.html',
+    styleUrls: ['./wheel.component.scss'],
+    encapsulation: ViewEncapsulation.ShadowDom
 })
 export class WheelComponent implements OnInit {
     @Input()

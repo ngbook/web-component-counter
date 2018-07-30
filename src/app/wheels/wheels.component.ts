@@ -1,12 +1,14 @@
 import {
     Component, OnInit,
     Input,
+    ViewEncapsulation,
 } from '@angular/core';
 
 @Component({
-  selector: 'ng-wheels',
-  templateUrl: './wheels.component.html',
-  styleUrls: ['./wheels.component.scss']
+    selector: 'ng-wheels',
+    templateUrl: './wheels.component.html',
+    styleUrls: ['./wheels.component.scss'],
+    encapsulation: ViewEncapsulation.ShadowDom
 })
 export class WheelsComponent implements OnInit {
 
@@ -19,7 +21,7 @@ export class WheelsComponent implements OnInit {
         this._data = dd;
         const count = dd.length;
         const nums = [];
-        for (let i = 0; i < count; i ++) {
+        for (let i = 0; i < count; i++) {
             const d = dd[i];
             nums.push(d);
         }
