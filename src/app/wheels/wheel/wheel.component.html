@@ -1,0 +1,13 @@
+<div class="wheel-wrap"
+    [style.height.px]="height"
+    [style.width.px]="width">
+    <img [src]="bg" *ngIf="bg" class="bg">
+    <div class="wheel" [style.margin-top.px]="-top">
+        <b class="box" *range="let index to 10"
+            [style.height.px]="height"
+            [style.line-height.px]="height"
+            [style.font-size.px]="fontSize"
+            [style.width.px]="width"
+            [style.color]="color">{{index}}</b>
+    </div>
+</div>

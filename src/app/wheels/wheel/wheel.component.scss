@@ -1,0 +1,35 @@
+:host {
+    display: inline-block;
+    .wheel-wrap {
+        // height: 50px;
+        vertical-align: text-bottom;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        .bg {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+        .wheel {
+            position: relative;
+            margin: 0;
+            // width: 24px;
+            float: left;
+            transition: margin .6s;
+            text-align: center;
+            background-attachment: fixed;
+            .box {
+                display: block;
+                // width: 24px;
+                height: 65px;
+                line-height: 65px;
+                font-size: 20px;
+                font-weight: normal;
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+<div class="wheels-wrap" [style.background]="bg">
+    <ng-wheel *ngFor="let d of nums;trackBy:trackByFn"
+        [num]="d" [delay]="delay" [height]="height"
+        [color]="color" [width]="width"
+        [style.margin]="margin"
+        [fontSize]="fontSize" [bg]="itemBg">
+    </ng-wheel>
+</div>
